@@ -79,3 +79,5 @@ end
 gem 'pry-rails'
 
 gem 'devise'
+
+gem "bulma-rails"
