@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pets#index'
-  resources :pets, only: :index
+  root to: 'home#index'
+  resources :pets
 end
