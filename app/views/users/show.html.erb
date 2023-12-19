@@ -47,3 +47,52 @@
     </div>
   </div>
 </section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <% @user.pets.each do |pet| %>
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <%= link_to pet_path(pet) do %>
+                  <%= attachment_image_tag pet, :image, fallback: "no-image.png" %>
+                <% end %>
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <%= link_to pet_path(pet), class: "panel-block" do %>
+                    <span class="panel-icon">
+                      <i class="fas fa-book" aria-hidden="true"></i>
+                    </span>
+                    この子を見る
+                  <% end %>
+                  <% if @user.id == current_user.id %>
+                    <%= link_to edit_pet_path(pet), class: "panel-block" do %>
+                      <span class="panel-icon">
+                        <i class="fas fa-edit"></i>
+                      </span>
+                      情報を編集する
+                    <% end %>
+                    <%= link_to pet_path(pet), data: { turbo_method: :delete }, data: {confirm: "削除しますか？"}, class: "panel-block" do %>
+                      <span class="panel-icon">
+                        <i class="fas fa-trash"></i>
+                      </span>
+                      情報を削除する
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="content">
+                <time><%= pet.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
