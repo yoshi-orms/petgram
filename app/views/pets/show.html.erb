@@ -1,7 +1,42 @@
+<section class="hero is-success">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        ペット詳細
+      </h1>
+    </div>
+  </div>
+</section>
 
-
-<%= attachment_image_tag @pet, :image %>
-
-<%= @pet.title %>
-
-<%= simple_format @pet.body %>
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-7">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <%= attachment_image_tag @pet, :image %>
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4"><%= @pet.title %></p>
+              </div>
+            </div>
+            <div class="content">
+              <table class="table is-narrow">
+                <tr>
+                  <th>ペット</th>
+                </tr>
+                <tr>
+                  <td><%= simple_format @pet.body %></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
