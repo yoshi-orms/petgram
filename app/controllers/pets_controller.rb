@@ -12,8 +12,11 @@ class PetsController < ApplicationController
   def create
     @pet = Pet.new(pet_params)
     @pet.user_id = current_user.id
-    @pet.save
-    redirect_to pet_path(@pet)
+    if @pet.save
+      redirect_to pet_path(@pet)
+    else
+      render :new
+    end
   end
 
   def show
@@ -29,8 +32,11 @@ class PetsController < ApplicationController
 
   def update
     @pet = Pet.find(params[:id])
-    @pet.update(pet_params)
-    redirect_to pet_path(@pet)
+    if @pet.update(pet_params)
+      redirect_to pet_path(@pet)
+    else
+      render edit
+    end
   end
 
   def destroy
