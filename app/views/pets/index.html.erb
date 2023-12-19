@@ -1,9 +1,6 @@
-<section class="hero is-success">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        ペット一覧
-      </h1>
-    </div>
-  </div>
-</section>
+<% @pets.each do |pet| %>
+<%= attachment_image_tag pet, :image %>
+<%= pet.user.username %>
+<%= pet.updated_at.strftime("%Y-%m-%d %H:%M") %>
+
+<% end %>
