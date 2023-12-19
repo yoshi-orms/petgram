@@ -13,7 +13,7 @@ class PetsController < ApplicationController
     @pet = Pet.new(pet_params)
     @pet.user_id = current_user.id
     if @pet.save
-      redirect_to pet_path(@pet)
+      redirect_to pet_path(@pet), notice: '投稿に成功しました。'
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class PetsController < ApplicationController
   def update
     @pet = Pet.find(params[:id])
     if @pet.update(pet_params)
-      redirect_to pet_path(@pet)
+      redirect_to pet_path(@pet), notice: '更新に成功しました。'
     else
       render :edit, status: :unprocessable_entity
     end
