@@ -6,4 +6,5 @@ class User < ApplicationRecord
   attachment :profile_image
 
   has_many :pets, dependent: :destroy
+  validates :username, presence: true
 end
