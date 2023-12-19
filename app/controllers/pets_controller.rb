@@ -2,7 +2,7 @@ class PetsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @pets = Pet.all
+    @pets = Pet.all.order(id: "DESC")
   end
 
   def new
