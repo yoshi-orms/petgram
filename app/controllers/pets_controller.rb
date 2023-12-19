@@ -15,7 +15,7 @@ class PetsController < ApplicationController
     if @pet.save
       redirect_to pet_path(@pet)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -35,7 +35,7 @@ class PetsController < ApplicationController
     if @pet.update(pet_params)
       redirect_to pet_path(@pet)
     else
-      render edit
+      render edit, status: :unprocessable_entity
     end
   end
 
