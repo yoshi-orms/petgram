@@ -33,6 +33,9 @@
                   <td><%= simple_format @pet.body %></td>
                 </tr>
               </table>
+              <% if @pet.user.id == current_user.id %>
+                <%= link_to "編集", edit_pet_path(@pet), class: "button is-success" %>
+              <% end %>
             </div>
           </div>
         </div>
