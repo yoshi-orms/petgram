@@ -42,7 +42,7 @@ class PetsController < ApplicationController
   def destroy
     pet = Pet.find(params[:id])
     pet.destroy
-    redirect_to pets_path
+    redirect_to pets_path, notice: "投稿を削除しました。"
   end
 
   private

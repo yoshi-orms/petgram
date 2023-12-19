@@ -12,10 +12,10 @@
 
 ActiveRecord::Schema[7.0].define(version: 2023_12_19_033157) do
   create_table "pets", charset: "utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "title"
-    t.text "body"
-    t.string "image_id"
+    t.integer "user_id", null: false
+    t.string "title", null: false
+    t.text "body", null: false
+    t.string "image_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
