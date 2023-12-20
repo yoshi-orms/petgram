@@ -42,14 +42,14 @@
             <%= link_to "ペット一覧", pets_path, class: "navbar-item button is-warning is-light" %>
           </div>
           <div class="navbar-item">
+            <%= link_to "飼い主さん一覧", users_path, class: " button is-warning is-light" %>
+          </div>
+          <div class="navbar-item">
             <%= link_to "新規投稿", new_pet_path, class: "navbar-item button is-warning is-light" %>
           </div>
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="field is-grouped">
-                <p class="control">
-                  <%= link_to "ペットグラマー（一覧）", users_path, class: " button is-warning is-light" %>
-                </p>
                 <p class="control">
                   <%= link_to "マイページ", user_path(current_user), class: " button is-warning is-light" %>
                 </p>
@@ -66,18 +66,10 @@
             <%= link_to "ペット一覧", pets_path, class: "navbar-item button is-warning is-light" %>
           </div>
           <div class="navbar-item">
-            <%= link_to "ペットグラマー（一覧）", users_path, class: "navbar-item button is-warning is-light" %>
+            <%= link_to "飼い主さん一覧", users_path, class: "navbar-item button is-warning is-light" %>
           </div>
           <div class="navbar-end">
             <div class="navbar-item">
-              <div class="field is-grouped">
-                <p class="control">
-                  <%= link_to "ログイン", new_user_session_path, class: "button is-warning is-light" %>
-                </p>
-                <p class="control">
-                  <%= link_to "新規登録", new_user_registration_path, class: "button is-warning is-light" %>
-                </p>
-              </div>
             </div>
           </div>
         </div>
