@@ -36,6 +36,17 @@
             </table>
             <table class="table is-fullwidth">
               <tr>
+                <% if @user.followed_by?(current_user) %>
+                  <td>
+                    <%=link_to "フォロー中", user_relationships_path(@user.id),class: "button is-primary", data: { turbo_method: :delete } %>
+                  </td>
+                <% else %>
+                  <%=link_to "フォローする", user_relationships_path(@user.id),class: "button is-primary", data: { turbo_method: :post } %>
+                <% end %>
+              </tr>
+            </table>
+            <table class="table is-fullwidth">
+              <tr>
                 <td>
                   <%= @user.profile %>
                 </td>
