@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :pets
   resources :users
+  resources :users do
+    resource :relationships, only: [:create, :destroy]
+  end
 end
