@@ -14,6 +14,7 @@ class LikesController < ApplicationController
     like.destroy
     respond_to do |format|
       format.js
+      format.turbo_stream
     end
   end
 
