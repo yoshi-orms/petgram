@@ -35,11 +35,7 @@
                 </div>
               </div>
               <div id="like-btn<%= pet.id %>">
-                <% if user_signed_in? && pet.liked_by?(current_user)%>
-                  <%=link_to "いいね済", pet_likes_path(pet.id),  data: { turbo_method: :delete }, class: "pet_likes" %>
-                <% else %>
-                  <%=link_to "いいねする", pet_likes_path(pet.id), data: { turbo_method: :post }, class: "pet_likes" %>
-                <% end %>
+                <%= render partial: "likes/like", locals: { pet: pet } %>
               </div>
 
               <div class="content">
